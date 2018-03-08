@@ -25,14 +25,24 @@ app.use(logger('dev'))
 
 app.use(bodyParser.json())
 
-    app.get('/', (req,res) => {
-        res.send('Hello world!')
-      })
+//bringing in the react client side.
+app.use(express.static(`${__dirname}/client/build`))
+
+
+    // app.get('/', (req,res) => {
+    //     res.send('Hello world!')
+    //   })
   
   
+      const creatureController = require('./controllers/creatureController')
+      app.use('/api/creatures', creatureController)
+
 // Exposes the Static Javascript HTML and CSS we need to run the app
 
-
+//below your api routes
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`)
+})
 
 
 const PORT = process.env.PORT || 3000
