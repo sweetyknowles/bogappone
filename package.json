@@ -1,0 +1,32 @@
+{
+  "name": "wdi14-idea-board",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "9.7.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/sweetyknowles/wdi14-idea-board"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.9",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^3.2.0"
+  },
+  "main": "server.js",
+  "devDependencies": {}
+}
