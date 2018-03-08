@@ -2,7 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
-const Morgan =require('morgan')
+const logger =require('morgan')
+
 const app = express()
 
 
@@ -19,15 +20,15 @@ connection.on('error', (err) => {
 })
 
 // apply middleware
+
+app.use(logger('dev'))
+
 app.use(bodyParser.json())
 
-app.use(express.static(`$__dirname}/client/build`))
-
-app.get('/', (req,res) => {
-    res.sendFile(`${__dirname}/client/build/index.html`)
-
-
-  })
+    app.get('/', (req,res) => {
+        res.send('Hello world!')
+      })
+  
   
 // Exposes the Static Javascript HTML and CSS we need to run the app
 
