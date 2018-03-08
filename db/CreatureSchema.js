@@ -9,6 +9,4 @@ const CreatureSchema = new Schema({
 
 
 
-module.exports = {
-  CreatureSchema
-}
+module.exports =  CreatureSchema 
