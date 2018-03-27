@@ -1,6 +1,8 @@
-const mongoose = require('mongoose')
-const CreatureSchemas = require('../db/CreatureSchema')
+const mongoose = require("mongoose");
+const { CreatureSchema } = require("../db/schemas/CreatureSchema");
 
-const Creature= mongoose.model('Creature',CreatureSchemas)
+const Creature = mongoose.model("Creature", CreatureSchema);
 
-module.exports = {Creature}
+module.exports = {
+  Creature
+};
